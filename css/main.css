@@ -178,5 +178,10 @@ header {
     outline: 1px solid green;
   }
 
+  .modal-show {
+    z-index: 10;
+    opacity: 100;
+  }
+
 
 /*# sourceMappingURL=../maps/main.css.map */

@@ -3,7 +3,10 @@ window.addEventListener('DOMContentLoaded', function() {
   // исходные данные
 
   var elems = document.querySelectorAll('.element');
+  var closeModalButton = document.querySelector('.close-button')
+  var modalWindow = document.querySelector('.modal')
 
+  modalWindow.classList.add('modal-show');
 
 
   // Логика
@@ -11,6 +14,11 @@ window.addEventListener('DOMContentLoaded', function() {
   function changeCss(elems) {
 
     var wich = elems[i].style.borderColor = "red";
+  }
+
+  function hideModal(){
+    modalWindow.classList.remove('modal-show');
+    
   }
 
   // события
@@ -23,6 +31,8 @@ window.addEventListener('DOMContentLoaded', function() {
     }
     changeCss(elems);
   }
+
+  closeModalButton.addEventListener('click', hideModal);
 
 });
 
