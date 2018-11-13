@@ -5,8 +5,9 @@ window.addEventListener('DOMContentLoaded', function() {
   var elems = document.querySelectorAll('.element');
   var closeModalButton = document.querySelector('.close-button')
   var modalWindow = document.querySelector('.modal')
+  var imageContainer = document.querySelector('.modal-image-container');
 
-  modalWindow.classList.add('modal-show');
+ 
 
 
   // Логика
@@ -18,20 +19,24 @@ window.addEventListener('DOMContentLoaded', function() {
 
   function hideModal(){
     modalWindow.classList.remove('modal-show');
+  }
+  
+  function openModal(){
+    var modalImageUrl = this.children[0].src;
+    imageContainer.style.backgroundImage = `url("${modalImageUrl}")`;
+    modalWindow.classList.add('modal-show');
     
   }
 
   // события
 
+  // assigning even listerers to all elements 
   for (i = 0; i < elems.length; i++) {
-
-    if (i % 2 == 0) {
-
-      continue;// пропускает текущую итерацию
-    }
-    changeCss(elems);
+    console.log(elems[i].children[0].src);
+    elems[i].addEventListener('click', openModal); 
   }
 
+  // close button 
   closeModalButton.addEventListener('click', hideModal);
 
 });
