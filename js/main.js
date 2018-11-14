@@ -17,10 +17,12 @@ window.addEventListener('DOMContentLoaded', function() {
     var wich = elems[i].style.borderColor = "red";
   }
 
+  // handles close of modal window
   function hideModal(){
     modalWindow.classList.remove('modal-show');
   }
   
+  // opens modal 
   function openModal(){
     var modalImageUrl = this.children[0].src;
     imageContainer.style.backgroundImage = `url("${modalImageUrl}")`;
